@@ -44,11 +44,7 @@ class TSAnnotator:
         Args:
             data_schema (TSAnnotationSchema): The data schema.
             encode_len (int): Encoding (history) length.
-            solver (str, optional): Solver to use. Defaults to "lbfgs".
-            penalty (str, optional): Regularization penalty. Defaults to "l2".
-            C (float, optional): Inverse of regularization strength. Defaults to 0.5.
-            l1_ratio (float, optional): L1 regularization ratio. Defaults to 0.5.
-            max_iter (int, optional): Maximum number of iterations. Defaults to 1000.
+            var_smoothing (float): Portion of the largest variance of all features added to variances for calculation stability.
             **kwargs: Additional keyword arguments.
         """
         self.data_schema = data_schema
