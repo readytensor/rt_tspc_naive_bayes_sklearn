@@ -1,3 +1,4 @@
+
 import os
 from typing import Any, Dict, Tuple, Union
 
@@ -66,6 +67,20 @@ def fit_transform_with_pipeline(
     trained_pipeline = train_pipeline(pipeline, data)
     transformed_data = transform_inputs(trained_pipeline, data)
     return trained_pipeline, transformed_data
+
+
+def fit_pipeline(pipeline: Pipeline, data: pd.DataFrame) -> Pipeline:
+    """
+    Fit the preprocessing pipeline.
+
+    Args:
+        pipeline (Pipeline): The preprocessing pipeline.
+        data (pd.DataFrame): The data as a numpy array
+
+    Returns:
+        Pipeline: Fitted preprocessing pipeline.
+    """
+    return train_pipeline(pipeline, data)
 
 
 def transform_data(
